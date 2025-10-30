@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap');
+
+:root {
+  color-scheme: only light;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f8f5f0;
+  color: #2c2a29;
+  --gold: #d4af37;
+  --emerald: #1c6846;
+  --marble: #f5f1eb;
+  --shadow: rgba(18, 21, 25, 0.25);
+  --glow: rgba(255, 221, 160, 0.55);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.9), rgba(240, 232, 221, 0.9)),
+    url('https://www.transparenttextures.com/patterns/marble.png');
+  background-color: var(--marble);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Guest Entry */
+
+.guest-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(244, 236, 226, 0.95));
+}
+
+.entry-card {
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(44, 42, 41, 0.12);
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.entry-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: var(--emerald);
+  margin-bottom: 0.25rem;
+}
+
+.entry-subtitle {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: rgba(44, 42, 41, 0.65);
+  margin-bottom: 1rem;
+}
+
+.entry-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(44, 42, 41, 0.8);
+}
+
+.entry-form {
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.entry-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(44, 42, 41, 0.7);
+}
+
+.entry-form input {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(28, 104, 70, 0.35);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.entry-button {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(120deg, var(--emerald), #145339);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(28, 104, 70, 0.35);
+}
+
+.entry-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.entry-error {
+  color: #b3261e;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.entry-secondary {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(28, 104, 70, 0.4);
+  background: transparent;
+  font-weight: 500;
+  color: var(--emerald);
+}
+
+/* Invitation Stage */
+
+.invitation-stage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(240, 232, 221, 0.85));
+}
+
+.sparkle-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.invitation-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 4rem 1.5rem 6rem;
+  z-index: 2;
+}
+
+.exit-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 42, 41, 0.3);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  color: rgba(44, 42, 41, 0.75);
+}
+
+.audio-toggle {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.15);
+}
+
+.audio-toggle button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-weight: 600;
+  background: var(--emerald);
+  color: #fff;
+}
+
+.audio-toggle button.off {
+  background: rgba(44, 42, 41, 0.25);
+}
+
+/* Curtains */
+
+.curtain-reveal {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.curtain {
+  width: 55%;
+  max-width: 520px;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 40px rgba(44, 42, 41, 0.25));
+}
+
+/* Bismillah Intro */
+
+.bismillah-intro {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bismillah-wrapper {
+  position: relative;
+  padding: 2rem 1.5rem 1rem;
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 32px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 25px 60px rgba(44, 42, 41, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.noor-glow {
+  position: absolute;
+  inset: 18% 12% auto 12%;
+  height: 55%;
+  background: radial-gradient(circle, var(--glow), transparent 65%);
+  filter: blur(24px);
+  z-index: -1;
+}
+
+.bismillah-image {
+  width: min(80vw, 420px);
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 6px 14px rgba(212, 175, 55, 0.45));
+}
+
+.greeting {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--emerald);
+  margin-bottom: 0.4rem;
+}
+
+.invitation-line {
+  font-size: 1rem;
+  color: rgba(44, 42, 41, 0.72);
+  margin-bottom: 0.75rem;
+}
+
+.couple-names {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0.5rem 0 0.35rem;
+}
+
+.event-subtitle {
+  font-size: 1rem;
+  color: rgba(44, 42, 41, 0.65);
+}
+
+/* Envelope */
+
+.envelope-scene {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.envelope-scene.opened .wax-seal {
+  pointer-events: none;
+}
+
+.envelope {
+  width: min(90vw, 460px);
+  filter: drop-shadow(0 20px 40px var(--shadow));
+}
+
+.wax-seal {
+  position: absolute;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.wax-seal img {
+  width: 120px;
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 1.2s ease;
+}
+
+.wax-seal.melting img {
+  transform: translateY(40px) scale(0.6);
+  opacity: 0;
+}
+
+.seal-instruction {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+/* Invitation Card */
+
+.invitation-card {
+  position: relative;
+  width: min(92vw, 580px);
+  margin-top: 1rem;
+}
+
+.invitation-card-bg {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(44, 42, 41, 0.2);
+}
+
+.invitation-card-content {
+  position: absolute;
+  inset: 0;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  color: rgba(44, 42, 41, 0.85);
+}
+
+.blessing {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--emerald);
+}
+
+.honour-line {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+.couple-highlight {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  color: var(--gold);
+  margin: 0.75rem 0 0.5rem;
+}
+
+.event-detail {
+  font-size: 0.95rem;
+}
+
+.guest-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.guest-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+.guest-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+.event-meta {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.dua {
+  margin-top: 1rem;
+  font-style: italic;
+  color: rgba(44, 42, 41, 0.7);
+}
+
+/* RSVP */
+
+.rsvp-card {
+  width: min(90vw, 480px);
+  background: rgba(255, 255, 255, 0.78);
+  padding: 1.75rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(44, 42, 41, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.rsvp-card h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--emerald);
+}
+
+.rsvp-subtext {
+  margin-top: 0.25rem;
+  color: rgba(44, 42, 41, 0.7);
+  font-size: 0.95rem;
+}
+
+.rsvp-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.rsvp-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvp-button.attending {
+  background: linear-gradient(120deg, var(--emerald), #145339);
+  box-shadow: 0 12px 24px rgba(28, 104, 70, 0.3);
+}
+
+.rsvp-button.declined {
+  background: linear-gradient(120deg, #c0392b, #96281b);
+  box-shadow: 0 12px 24px rgba(150, 40, 27, 0.25);
+}
+
+.rsvp-button.active {
+  transform: translateY(-2px);
+}
+
+.notes-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+.notes-field {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 12px;
+  border: 1px solid rgba(44, 42, 41, 0.2);
+  padding: 0.75rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.rsvp-message {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--emerald);
+}
+
+/* Countdown */
+
+.countdown-section {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 40px rgba(44, 42, 41, 0.1);
+  width: min(90vw, 480px);
+}
+
+.countdown-section h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: var(--emerald);
+}
+
+.countdown-date {
+  margin: 0.5rem 0 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(44, 42, 41, 0.65);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+  gap: 0.75rem;
+}
+
+.countdown-block {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 0.85rem 0.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.countdown-number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--emerald);
+}
+
+.countdown-label {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+.countdown-complete {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--emerald);
+}
+
+/* Admin Dashboard */
+
+.admin-dashboard {
+  padding: 2rem clamp(1.5rem, 4vw, 3rem);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(244, 236, 226, 0.85));
+  min-height: 100vh;
+}
+
+.admin-header h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--emerald);
+  margin-bottom: 0.35rem;
+}
+
+.admin-header p {
+  color: rgba(44, 42, 41, 0.7);
+}
+
+.admin-section {
+  margin-top: 2.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 40px rgba(44, 42, 41, 0.1);
+}
+
+.admin-section h2 {
+  margin-top: 0;
+  font-family: 'Playfair Display', serif;
+  color: var(--emerald);
+}
+
+.admin-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+.form-row input,
+.form-row textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(44, 42, 41, 0.2);
+  padding: 0.85rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.admin-form button {
+  justify-self: start;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(120deg, var(--emerald), #145339);
+  color: #fff;
+  font-weight: 600;
+}
+
+.form-error {
+  color: #b3261e;
+  font-size: 0.85rem;
+}
+
+.guest-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.guest-list-header input {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 42, 41, 0.2);
+  width: min(280px, 100%);
+}
+
+.guest-table {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.guest-table-header,
+.guest-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 0.8fr 1.4fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.guest-table-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(44, 42, 41, 0.55);
+}
+
+.guest-row {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 10px 20px rgba(44, 42, 41, 0.08);
+}
+
+.guest-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.guest-actions button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(28, 104, 70, 0.12);
+  color: var(--emerald);
+}
+
+.guest-actions .danger {
+  background: rgba(150, 40, 27, 0.12);
+  color: #96281b;
+}
+
+.rsvp-status.attending {
+  color: var(--emerald);
+  font-weight: 600;
+}
+
+.rsvp-status.declined {
+  color: #96281b;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 1rem;
+  color: rgba(44, 42, 41, 0.6);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .curtain {
+    width: 75%;
+  }
+
+  .guest-table-header,
+  .guest-row {
+    grid-template-columns: 1.4fr 0.9fr 0.7fr;
+  }
+
+  .guest-row span:nth-child(4),
+  .guest-table-header span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .invitation-content {
+    padding-top: 5.5rem;
+  }
+
+  .bismillah-wrapper {
+    padding: 1.75rem 1.25rem 0.75rem;
+  }
+
+  .invitation-card-content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .rsvp-actions {
+    flex-direction: column;
+  }
+
+  .guest-table-header,
+  .guest-row {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .guest-row span:nth-child(3),
+  .guest-table-header span:nth-child(3) {
+    display: none;
+  }
+}
