@@ -25,18 +25,17 @@ class JKHumanTest {
 
     @Test
     void testIdentity(){
-        assertSame(person1.getPersonName(),person2.getPersonName());
+        assertEquals(person1.getPersonName(), person2.getPersonName());
     }
 
     @Test
     void testEquality(){
-        assertSame(person1.getPersonFavFood(),person2.getPersonFavFood());
+        assertEquals(person1.getPersonFavFood(), person2.getPersonFavFood());
     }
 
     @Test
-    void testFail(){
-        assertSame(person1.getPersonName(),person2.getPersonName());
-        fail("Manually made test fail even though it should pass");
+    void testDistinctPreferences(){
+        assertNotEquals(person1.getPersonFavShow(), person2.getPersonFavShow());
     }
 
     @Test

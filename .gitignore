@@ -1,5 +1,8 @@
 # Files to be ignored
 
-# Intelli J specific files
+# IntelliJ specific files
 /.idea/
 *.iml
+
+# Maven build output
+/target/
