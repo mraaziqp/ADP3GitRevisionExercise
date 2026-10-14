@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light dark;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body[data-theme='dark'] {
+  background: #121212;
+  color: #f3f3f3;
+}
+
+body[data-theme='light'] {
+  background: #f2f4f7;
+  color: #222;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0054a6;
+  color: white;
+}
+
+.navbar a {
+  color: inherit;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.dashboard .cards {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.dashboard article {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-page form {
+  display: grid;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.knowledge {
+  padding: 1rem 2rem;
+}
+
+.knowledge ul {
+  list-style: none;
+  padding: 0;
+}
+
+.knowledge li {
+  background: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
